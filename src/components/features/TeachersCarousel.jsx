@@ -107,7 +107,7 @@ const TeachersCarousel = () => {
                                             <p className="text-[#4b5563] font-semibold mb-4">Overall: <span className="text-2xl font-bold text-[#312e81]">{teacher.overall}</span></p>
 
                                             <div className="mb-6">
-                                                <p className="font-bold text-black uppercase text-sm mb-1">"{teacher.slogan_Title}</p>
+                                                <p className="font-bold text-black uppercase text-sm mb-1">"{teacher.slogan_Title}"</p>
                                                 <div className="text-[#4b5563] italic text-sm" dangerouslySetInnerHTML={{ __html: teacher.slogan_Content }} />
                                             </div>
 

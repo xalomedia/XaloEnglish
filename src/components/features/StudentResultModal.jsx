@@ -28,13 +28,7 @@ const StudentResultModal = ({ isOpen, onClose, result }) => {
                     {/* Right Side: Details */}
                     <div className="md:w-7/12 p-8 flex flex-col">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary flex-shrink-0">
-                                <img
-                                    src={result.profileImgURL || "https://placehold.co/100x100?text=Avatar"}
-                                    alt={result.name}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
+
                             <h3 className="text-2xl font-bold text-primary-dark uppercase">{result.name}</h3>
                         </div>
 

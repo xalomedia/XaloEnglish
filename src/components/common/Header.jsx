@@ -30,13 +30,15 @@ const Header = () => {
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-white py-4'
             }`}>
-            <div className="container mx-auto px-4 flex justify-between items-center">
+            <div className='container mx-auto px-4 flex justify-start items-center'>
+
                 <Link to="/" className="flex items-center gap-2 font-bold text-2xl text-primary-dark">
                     <div className="h-12 w-12">
                         <img src="logo1.png" alt="" className='w-full' />
                     </div>
                     <span>xalo.english</span>
                 </Link>
+            <div className="container mx-auto px-4 flex justify-end items-center ">
 
                 <nav className="hidden lg:flex items-center gap-6">
                     {navLinks.map((link) => (
@@ -99,6 +101,7 @@ const Header = () => {
                         </Link>
                     ))}
                 </div>
+            </div>
             </div>
         </header>
     );

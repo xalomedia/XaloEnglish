@@ -55,7 +55,7 @@ const TeachersPage = () => {
                     </p>
                     <div className="w-72 lg:w-150 rounded-full h-1 bg-primary mx-auto mt-4"></div>
                 </div>
-                <div className="flex flex-col gap-32">
+                <div className="flex flex-col gap-32 px-4">
                     {teachers.map((teacher, index) => (
                         <TeacherCard key={index} {...teacher} />
                     ))}

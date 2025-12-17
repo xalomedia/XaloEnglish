@@ -3,7 +3,7 @@ import React from 'react';
 
 const TeacherCard = ({ image, name, overall, slogan_Title, slogan_Content, secondaryImage }) => {
     return (
-        <div className="bg-white rounded-3xl overflow-visible shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-2xl group relative">
+        <div className="bg-white rounded-3xl overflow-visible shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-2xl group relative px-2">
             <div className="flex flex-col md:flex-row h-full">
 
                 <div className="w-full md:w-[75%] lg:w-[66.66%] relative p-8 flex flex-col md:flex-row gap-6 items-start z-10">
@@ -41,7 +41,7 @@ const TeacherCard = ({ image, name, overall, slogan_Title, slogan_Content, secon
 
                 </div>
 
-                <div className="hidden md:block absolute right-[-20px] top-[40px] w-[220px] h-[300px] z-10">
+                <div className="block md:block relative md:absolute md:right-[-20px] md:top-[40px] w-full md:w-[220px] h-[300px] z-10 p-8 md:p-0">
 
 
                     {secondaryImage ? (

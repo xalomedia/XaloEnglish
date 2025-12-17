@@ -265,7 +265,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {studentResults.map((result) => (
               <div key={result._id} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100">
-                <div className="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-pink-400 to-purple-500 mb-4">
+                {/* <div className="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-pink-400 to-purple-500 mb-4">
                   <div className="w-full h-full rounded-full bg-gray-200 overflow-hidden">
                     <img
                       src={result.profileImgURL || "https://placehold.co/100x100?text=Avatar"}
@@ -273,7 +273,7 @@ const HomePage = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className="flex justify-between items-end w-full mb-4 px-2">
                   <h3 className="text-lg font-bold text-gray-800 uppercase">{result.name}</h3>
                   <span className="text-4xl font-extrabold text-gray-700">{Number(result.overall).toFixed(1)}</span>
