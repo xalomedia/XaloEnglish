@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Plus, Trash2 } from 'lucide-react';
 import client from '../../api/client';
+import StudentResultModal from '../../components/features/StudentResultModal';
 
 const ProgramTrackForm = ({ track, groups, onClose, onSuccess }) => {
     const [formData, setFormData] = useState({
@@ -21,6 +22,40 @@ const ProgramTrackForm = ({ track, groups, onClose, onSuccess }) => {
     const [imageFile, setImageFile] = useState(null);
     const [uploading, setUploading] = useState(false);
     const [error, setError] = useState('');
+
+    const [studentResults, setStudentResults] = useState([]);
+  const [programTracks, setProgramTracks] = useState([]);
+  const [selectedResult, setSelectedResult] = useState(null);
+  const [showResultModal, setShowResultModal] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [resultsRes, tracksRes] = await Promise.all([
+          client.get('/student-results'),
+          client.get('/programs/tracks')
+        ]);
+
+        const resultsData = resultsRes.data;
+        const resultsArray = Array.isArray(resultsData) ? resultsData : (resultsData?.results ?? resultsData?.data ?? []);
+
+        const tracksData = tracksRes.data;
+        const tracksArray = Array.isArray(tracksData) ? tracksData : (tracksData?.tracks ?? tracksData?.data ?? []);
+
+        setStudentResults(resultsArray.slice(0, 3));
+        setProgramTracks(tracksArray.slice(0, 3));
+      } catch (error) {
+        console.error('Error fetching home page data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleShowResult = (result) => {
+    setSelectedResult(result);
+    setShowResultModal(true);
+  };
 
     useEffect(() => {
         if (track) {
@@ -521,6 +556,12 @@ const ProgramTrackForm = ({ track, groups, onClose, onSuccess }) => {
                     </div>
                 </form >
             </div >
+
+            <StudentResultModal
+        isOpen={showResultModal}
+        onClose={() => setShowResultModal(false)}
+        result={selectedResult}
+      />
         </div >
     );
 };

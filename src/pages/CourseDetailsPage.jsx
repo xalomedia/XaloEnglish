@@ -5,20 +5,35 @@ import Section from '../components/common/Section';
 import slider_khac from '../assets/slider/sliderKhac.png';
 import { ArrowRight, CheckCircle, Clock, TrendingUp, Users } from 'lucide-react';
 import CTASection from '../components/features/CTASection';
+import StudentResultModal from '../components/features/StudentResultModal';
 
 const CourseDetailsPage = () => {
     const { courseId } = useParams();
     const navigate = useNavigate();
     const [track, setTrack] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [studentResults, setStudentResults] = useState([]);
+    const [selectedResult, setSelectedResult] = useState(null);
+    const [showResultModal, setShowResultModal] = useState(false);
 
     useEffect(() => {
-        const fetchTrack = async () => {
+        const fetchTrackAndResults = async () => {
             try {
-                const { data } = await client.get(`/programs/tracks/${courseId}`);
-                setTrack(data);
+                // Fetch track details and student results in parallel
+                const [trackRes, resultsRes] = await Promise.all([
+                    client.get(`/programs/tracks/${courseId}`),
+                    client.get('/student-results')
+                ]);
+
+                setTrack(trackRes.data);
+
+                // Process student results
+                const resultsData = resultsRes.data;
+                const resultsArray = Array.isArray(resultsData) ? resultsData : (resultsData?.results ?? resultsData?.data ?? []);
+                // Get 3 random results or first 3
+                setStudentResults(resultsArray.slice(0, 3));
             } catch (error) {
-                console.error('Error fetching track:', error);
+                console.error('Error fetching data:', error);
                 setTrack(null);
             } finally {
                 setLoading(false);
@@ -26,9 +41,14 @@ const CourseDetailsPage = () => {
         };
 
         if (courseId) {
-            fetchTrack();
+            fetchTrackAndResults();
         }
     }, [courseId]);
+
+    const handleShowResult = (result) => {
+        setSelectedResult(result);
+        setShowResultModal(true);
+    };
 
     if (loading) {
         return <div className="pt-32 pb-24 text-center">Loading...</div>;
@@ -171,77 +191,44 @@ const CourseDetailsPage = () => {
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                        {/* Card 1 */}
-                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100">
-                            <div className="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-pink-400 to-purple-500 mb-4">
-                                <div className="w-full h-full rounded-full bg-gray-200 overflow-hidden">
-                                    <img src="https://placehold.co/100x100?text=Avatar" alt="Avatar" className="w-full h-full object-cover" />
+                        {studentResults.map((result) => (
+                            <div key={result._id} className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100">
+                                {/* <div className="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-pink-400 to-purple-500 mb-4">
+                  <div className="w-full h-full rounded-full bg-gray-200 overflow-hidden">
+                    <img
+                      src={result.profileImgURL || "https://placehold.co/100x100?text=Avatar"}
+                      alt={result.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div> */}
+                                <div className="flex justify-between items-end w-full mb-4 px-2">
+                                    <h3 className="text-lg font-bold text-gray-800 uppercase">{result.name}</h3>
+                                    <span className="text-4xl font-extrabold text-gray-700">{Number(result.overall).toFixed(1)}</span>
                                 </div>
-                            </div>
-                            <div className="flex justify-between items-end w-full mb-4 px-2">
-                                <h3 className="text-lg font-bold text-gray-800 uppercase">LÝ ANH QUÂN</h3>
-                                <span className="text-4xl font-extrabold text-gray-700">7.0</span>
-                            </div>
-                            <div className="flex gap-4 text-left mb-6">
-                                <div className="w-1/3 flex-shrink-0">
-                                    <img src="https://placehold.co/150x200?text=IELTS" alt="Certificate" className="w-full h-auto rounded shadow-sm border border-gray-200" />
+                                <div className="flex gap-4 text-left mb-6">
+                                    <div className="w-1/3 flex-shrink-0">
+                                        <img
+                                            src={result.certificateImageUrl || "https://placehold.co/150x200?text=IELTS"}
+                                            alt="Certificate"
+                                            className="w-full h-auto rounded shadow-sm border border-gray-200"
+                                        />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div
+                                            className="text-sm text-gray-600 italic line-clamp-4"
+                                            dangerouslySetInnerHTML={{ __html: result.testimonial }}
+                                        />
+                                    </div>
                                 </div>
-                                <p className="text-sm text-gray-600 italic flex-1">
-                                    "Dạ em thấy việc học ở Xa Lộ English đều ổn hết ạ, gv dạy rất nhiều thứ, luôn nhiệt huyết và có tâm ạ."
-                                </p>
+                                <button
+                                    onClick={() => handleShowResult(result)}
+                                    className="mt-auto bg-[#5b5e98] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#4a4d85] transition-colors shadow-md w-full md:w-auto"
+                                >
+                                    Xem thêm
+                                </button>
                             </div>
-                            <button className="mt-auto bg-[#5b5e98] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#4a4d85] transition-colors shadow-md w-full md:w-auto">
-                                Xem thêm
-                            </button>
-                        </div>
-
-                        {/* Card 2 */}
-                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100">
-                            <div className="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-pink-400 to-purple-500 mb-4">
-                                <div className="w-full h-full rounded-full bg-gray-200 overflow-hidden">
-                                    <img src="https://placehold.co/100x100?text=Avatar" alt="Avatar" className="w-full h-full object-cover" />
-                                </div>
-                            </div>
-                            <div className="flex justify-between items-end w-full mb-4 px-2">
-                                <h3 className="text-lg font-bold text-gray-800 uppercase">NGUYỄN THANH THẢO</h3>
-                                <span className="text-4xl font-extrabold text-gray-700">8.0</span>
-                            </div>
-                            <div className="flex gap-4 text-left mb-6">
-                                <div className="w-1/3 flex-shrink-0">
-                                    <img src="https://placehold.co/150x200?text=IELTS" alt="Certificate" className="w-full h-auto rounded shadow-sm border border-gray-200" />
-                                </div>
-                                <p className="text-sm text-gray-600 italic flex-1">
-                                    "Dạ học tại Xa Lộ English okiee, không có vấn đề gì hết ạ."
-                                </p>
-                            </div>
-                            <button className="mt-auto bg-[#5b5e98] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#4a4d85] transition-colors shadow-md w-full md:w-auto">
-                                Xem thêm
-                            </button>
-                        </div>
-
-                        {/* Card 3 */}
-                        <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100">
-                            <div className="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-pink-400 to-purple-500 mb-4">
-                                <div className="w-full h-full rounded-full bg-gray-200 overflow-hidden">
-                                    <img src="https://placehold.co/100x100?text=Avatar" alt="Avatar" className="w-full h-full object-cover" />
-                                </div>
-                            </div>
-                            <div className="flex justify-between items-end w-full mb-4 px-2">
-                                <h3 className="text-lg font-bold text-gray-800 uppercase">NGÔ NHẬT TIẾN</h3>
-                                <span className="text-4xl font-extrabold text-gray-700">7.0</span>
-                            </div>
-                            <div className="flex gap-4 text-left mb-6">
-                                <div className="w-1/3 flex-shrink-0">
-                                    <img src="https://placehold.co/150x200?text=IELTS" alt="Certificate" className="w-full h-auto rounded shadow-sm border border-gray-200" />
-                                </div>
-                                <p className="text-sm text-gray-600 italic flex-1">
-                                    "Xalo như nhà em vậy. Sau 1 thời gian học ở đây em cảm thấy được mọi người yêu thương :3 Đặc biệt là anh Phúc, em gắn bó..."
-                                </p>
-                            </div>
-                            <button className="mt-auto bg-[#5b5e98] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#4a4d85] transition-colors shadow-md w-full md:w-auto">
-                                Xem thêm
-                            </button>
-                        </div>
+                        ))}
                     </div>
 
                     <div className="text-center">
@@ -254,6 +241,12 @@ const CourseDetailsPage = () => {
             </section>
 
             <CTASection />
+
+            <StudentResultModal
+                isOpen={showResultModal}
+                onClose={() => setShowResultModal(false)}
+                result={selectedResult}
+            />
         </div>
     );
 };
