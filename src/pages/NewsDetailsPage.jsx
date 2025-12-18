@@ -44,7 +44,7 @@ const NewsDetailsPage = () => {
     }
 
     return (
-        <div className="pt-20 bg-gray-50 min-h-screen">
+        <div className="pt-20 bg-gray-50 min-h-screen mt-20">
             <article className="bg-white">
                 {/* Header / Cover Image */}
                 {post.coverImageUrl && (
