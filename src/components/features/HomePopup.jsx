@@ -36,7 +36,7 @@ const HomePopup = () => {
                     className="block rounded-xl overflow-hidden shadow-2xl"
                 >
                     <img
-                        src="https://xalo.edu.vn/image/cache/catalog/pop-up-cta-ve-group-fb-ielts-station-400-x-500-px-1-380x475.png"
+                        src="popup.png"
                         alt="Tham gia group IELTS Station"
                         className="w-full h-auto object-contain"
                     />

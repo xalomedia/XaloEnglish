@@ -125,9 +125,14 @@ const HomePage = () => {
                   Xa Lộ English tin rằng muốn học đúng cách thì trước hết phải hiểu đúng mình. Bằng quy trình "Chấn - Chữa", học viên sẽ được "chấn" để nhìn ra điểm mạnh, điểm yếu, cũng như những rào cản trên hành trình IELTS. Từ đó, giáo viên sẽ "chữa" bằng việc xây dựng lộ trình học tập phù hợp với trình độ và mục tiêu cá nhân. Cách tiếp cận này giống như đi khám bệnh: chỉ khi chẩn đúng, thì chữa mới trúng. Nhờ vậy, học viên có định hướng rõ ràng, tránh học sai cách và nhanh chóng đạt được kết quả mong muốn.
                 </p>
               </div>
-              <div className="md:w-1/2 relative min-h-[300px]">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZsJGAdcC-5U" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group cursor-pointer hover:bg-black/30 transition-all">
+              <div className="md:w-1/2 relative min-h-[300px] rounded-lg overflow-hidden">
+                <img 
+                  src="https://img.youtube.com/vi/ZsJGAdcC-5U/maxresdefault.jpg" 
+                  alt="Xa Lộ English Method" 
+                  className="w-full h-full object-cover"
+                />
+                
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group cursor-pointer hover:bg-black/30 transition-all" onClick={() => window.open('https://www.youtube.com/watch?v=ZsJGAdcC-5U', '_blank')}>
                   <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform">
                     <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
@@ -150,7 +155,7 @@ const HomePage = () => {
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="md:w-1/2">
                   <img
-                    src="https://xalo.edu.vn/image/cache/catalog/services/hinhweb-artboard-1-copy-200x210.png"
+                    src="h1.png"
                     alt="Illustration"
                     className="w-full h-auto rounded-lg mb-4 md:mb-0"
                   />
@@ -207,7 +212,7 @@ const HomePage = () => {
                 </p>
                 <div className="md:w-1/2">
                   <img
-                    src="https://xalo.edu.vn/image/cache/catalog/services/hinhweb-artboard-1-0x0.png"
+                    src="h2.png"
                     alt="Teachers"
                     className="w-full h-auto rounded-lg"
                   />
@@ -228,7 +233,7 @@ const HomePage = () => {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="md:w-1/3">
                   <img
-                    src="https://xalo.edu.vn/image/cache/catalog/services/hinh-iconmoney-0x0.png"
+                    src="h3.png"
                     alt="Commitment"
                     className="w-full h-auto rounded-lg"
                   />

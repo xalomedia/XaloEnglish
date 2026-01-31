@@ -27,12 +27,12 @@ const ScrollToTop = () => {
     };
 
     return (
-        <div className={`fixed bottom-24 right-4 md:bottom-16 md:right-8 z-40 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className={`fixed bottom-12 left-4 sm:bottom-8 sm:left-4 sm:right-auto md:bottom-16 md:left-8 z-40 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
 
             <button
                 onClick={scrollToTop}
                 className="bg-gray-500 hover:bg-gray-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center justify-center w-12 h-12"
-                style={{ marginBottom: '120px' }} // Add margin to sit above the floating actions
+                style={{ marginBottom: '0' }} // Add margin to sit above the floating actions
                 aria-label="Scroll to top"
             >
                 <svg viewBox="0 0 32 32" className="w-6 h-6" fill="currentColor">
