@@ -30,7 +30,73 @@ export default {
                 border: '#e2e8f0',      // Slate 200
             },
             fontFamily: {
-                sans: ['Roboto', 'sans-serif'],
+                // Vietnamese-optimized font stack
+                sans: [
+                    'Roboto',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    '"Segoe UI"',
+                    'Helvetica',
+                    'Arial',
+                    'sans-serif',
+                    '"Apple Color Emoji"',
+                    '"Segoe UI Emoji"',
+                    '"Segoe UI Symbol"'
+                ],
+                // For headings - Vietnamese optimized
+                'heading': [
+                    'Playfair Display',
+                    'Georgia',
+                    'serif'
+                ],
+                // Monospace for code
+                'mono': [
+                    '"Courier New"',
+                    'Courier',
+                    'monospace'
+                ],
+                // Vietnamese body text
+                'vietnamese': [
+                    'Roboto',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    '"Segoe UI"',
+                    'sans-serif'
+                ],
+            },
+            fontSize: {
+                // Vietnamese-friendly font sizes
+                'xs': ['0.75rem', { lineHeight: '1rem' }],
+                'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+                'base': ['1rem', { lineHeight: '1.5rem' }],
+                'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+                'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+                '2xl': ['1.5rem', { lineHeight: '2rem' }],
+                '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+                '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+                '5xl': ['3rem', { lineHeight: '1' }],
+            },
+            lineHeight: {
+                // Vietnamese text line heights
+                'tight': '1.2',
+                'snug': '1.3',
+                'normal': '1.5',
+                'relaxed': '1.625',
+                'loose': '2',
+                'vietnamese': '1.7',
+                'vietnamese-tight': '1.3',
+                'vietnamese-relaxed': '1.9',
+            },
+            letterSpacing: {
+                // Vietnamese letter spacing
+                'tighter': '-0.05em',
+                'tight': '-0.025em',
+                'normal': '0em',
+                'wide': '0.025em',
+                'wider': '0.05em',
+                'widest': '0.1em',
+                'vietnamese': '0.3px',
+                'vietnamese-title': '-0.01em',
             },
             borderRadius: {
                 'lg': '0.75rem',

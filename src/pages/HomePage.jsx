@@ -4,17 +4,17 @@ import Section from '../components/common/Section';
 import Button from '../components/common/Button';
 import CourseCard from '../components/features/CourseCard';
 import ReviewCard from '../components/features/ReviewCard';
-
 import CourseCategories from '../components/features/CourseCategories';
-import TeachersCarousel from '../components/features/TeachersCarousel';
-import ReferenceMaterials from '../components/features/ReferenceMaterials';
-import CTASection from '../components/features/CTASection';
-import HomePopup from '../components/features/HomePopup';
-import StudentResultModal from '../components/features/StudentResultModal';
-
-import { useState, useEffect } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import client from '../api/client';
-import CoursesTabs from '../components/features/CoursesTabs';
+import { cacheManager } from '../utils/cacheManager';
+
+// Lazy load below-the-fold components
+const TeachersCarousel = lazy(() => import('../components/features/TeachersCarousel'));
+const ReferenceMaterials = lazy(() => import('../components/features/ReferenceMaterials'));
+const CTASection = lazy(() => import('../components/features/CTASection'));
+const StudentResultModal = lazy(() => import('../components/features/StudentResultModal'));
+const CoursesTabs = lazy(() => import('../components/features/CoursesTabs'));
 
 const HomePage = () => {
   const [studentResults, setStudentResults] = useState([]);
@@ -25,6 +25,17 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Check cache first
+        const cachedResults = cacheManager.get('student-results');
+        const cachedTracks = cacheManager.get('programs-tracks');
+
+        if (cachedResults && cachedTracks) {
+          setStudentResults(cachedResults);
+          setProgramTracks(cachedTracks);
+          return;
+        }
+
+        // Fetch from API if not cached
         const [resultsRes, tracksRes] = await Promise.all([
           client.get('/student-results'),
           client.get('/programs/tracks')
@@ -36,8 +47,15 @@ const HomePage = () => {
         const tracksData = tracksRes.data;
         const tracksArray = Array.isArray(tracksData) ? tracksData : (tracksData?.tracks ?? tracksData?.data ?? []);
 
-        setStudentResults(resultsArray.slice(0, 3));
-        setProgramTracks(tracksArray.slice(0, 3));
+        const limitedResults = resultsArray.slice(0, 3);
+        const limitedTracks = tracksArray.slice(0, 3);
+
+        // Cache the results (5 minute TTL)
+        cacheManager.set('student-results', limitedResults, 5 * 60);
+        cacheManager.set('programs-tracks', limitedTracks, 5 * 60);
+
+        setStudentResults(limitedResults);
+        setProgramTracks(limitedTracks);
       } catch (error) {
         console.error('Error fetching home page data:', error);
       }
@@ -53,7 +71,7 @@ const HomePage = () => {
 
   return (
     <div className="pt-20">
-      <HomePopup />
+      {/* <HomePopup /> */}
       {/* Hero Section */}
       <section className="relative min-h-[600px] h-auto flex items-center text-white overflow-hidden py-12">
         <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[120%] bg-gradient-to-br from-primary-light to-primary-dark rounded-l-full opacity-10 z-0"></div>
@@ -321,7 +339,9 @@ const HomePage = () => {
       </section>
 
       {/* Teachers Carousel Section */}
-      <TeachersCarousel />
+      <Suspense fallback={<div className="py-24 flex justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
+        <TeachersCarousel />
+      </Suspense>
 
 
       {/* Popular Courses Preview */}
@@ -381,16 +401,22 @@ const HomePage = () => {
 
 
       {/* Reference Materials Section */}
-      <ReferenceMaterials />
+      <Suspense fallback={<div className="py-24 flex justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
+        <ReferenceMaterials />
+      </Suspense>
 
       {/* CTA Section */}
-      <CTASection />
+      <Suspense fallback={<div className="py-24 flex justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div></div>}>
+        <CTASection />
+      </Suspense>
 
-      <StudentResultModal
-        isOpen={showResultModal}
-        onClose={() => setShowResultModal(false)}
-        result={selectedResult}
-      />
+      <Suspense>
+        <StudentResultModal
+          isOpen={showResultModal}
+          onClose={() => setShowResultModal(false)}
+          result={selectedResult}
+        />
+      </Suspense>
     </div >
   );
 };
