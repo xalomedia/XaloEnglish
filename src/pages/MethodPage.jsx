@@ -22,9 +22,9 @@ const MethodPage = () => {
 
                 <div className="container mx-auto px-4 relative z-10">
 
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-white text-center mb-4 uppercase tracking-widest drop-shadow-md">PHƯƠNG PHÁP <br /> CHẤN - CHỮA</h1>
+                    <h1 className="text-4xl md:text-6xl font-extrabold text-white text-center mb-4 uppercase tracking-widest drop-shadow-md">PHƯƠNG PHÁP <br /> CHẨN - CHỮA</h1>
                     <p className="text-center text-white text-lg max-w-3xl mx-auto opacity-90">
-                        Giải pháp độc quyền tại Xalo English giúp học viên lấy lại căn bản,
+                        Giải pháp độc quyền tại Xa Lộ English giúp học viên lấy lại căn bản,
                         khắc phục điểm yếu và bứt phá điểm số trong thời gian ngắn nhất.
                     </p>
                 </div>
@@ -48,10 +48,10 @@ const MethodPage = () => {
             <Section className="bg-white">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary-dark uppercase tracking-wide mb-6">
-                        CÁC BƯỚC HIỆN THỰC PHƯƠNG PHÁP <br /> CHẤN - CHỮA
+                        CÁC BƯỚC HIỆN THỰC PHƯƠNG PHÁP <br /> CHẨN - CHỮA
                     </h2>
                     <p className="text-text-secondary max-w-4xl mx-auto leading-relaxed">
-                        Mô hình "chấn - chữa" là phương pháp giảng dạy chính tại Xa Lộ English trong tất cả các khóa học bao gồm: Lớp nhóm online, lớp nhóm offline, lớp 1:1. Để mỗi học viên có trải nghiệm học tập tốt nhất và có được kết quả mong muốn, Xa Lộ English luôn chú trọng quy trình Chấn - Chữa dựa theo quy trình sau:
+                        Mô hình "chẩn - chữa" là phương pháp giảng dạy chính tại Xa Lộ English trong tất cả các khóa học bao gồm: Lớp nhóm online, lớp nhóm offline, lớp 1:1. Để mỗi học viên có trải nghiệm học tập tốt nhất và có được kết quả mong muốn, Xa Lộ English luôn chú trọng quy trình Chẩn - Chữa dựa theo quy trình sau:
                     </p>
                 </div>
 

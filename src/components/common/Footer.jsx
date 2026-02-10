@@ -10,14 +10,14 @@ const Footer = () => {
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-2 font-bold text-2xl text-primary-dark mb-4">
                         <div className="h-12 w-12">
-                            <img src="logo1.png" alt="" className='w-full' />
+                            <img src="LOGO_MAU.png" alt="" className='w-full' />
                         </div>
                         <span>xalo.english</span>
                     </div>
                     <p className="text-sm"><b>Cơ sở 2:</b> 250 Nguyễn Đình Chính, Phường 11, Phú Nhuận, HCM.</p>
-                    <p className="text-sm">Chuyên gia tư vấn, giải pháp điều trị tiếng Anh mất gốc.</p>
+                    <p className="text-sm">Học đúng cách khi hiểu đúng mình.</p>
                     <div className="flex flex-col gap-2 text-sm font-medium">
-                        <p className="flex items-center gap-2"><Phone size={16} /> Hotline: 0793 159 413</p>
+                        <p className="flex items-center gap-2"><Phone size={16} /> Hotline: 078 6688 149</p>
                     </div>
                     <div className="flex gap-4 mt-4 items-center">
                         <a href="https://www.facebook.com/xalo.english" className="w-10 h-10 bg-white/50 flex items-center justify-center rounded-full transition-all hover:bg-primary hover:text-white"><Facebook size={20} /></a>

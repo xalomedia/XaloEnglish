@@ -25,7 +25,7 @@ const TeacherCard = ({ image, name, overall, slogan_Title, slogan_Content, secon
 
                         {/* Slogan Title */}
                         <p className="font-bold text-black uppercase text-sm mb-1 tracking-wider">
-                            "{slogan_Title}
+                            "{slogan_Title}"
                         </p>
 
                         {/* Slogan Content */}
@@ -35,7 +35,7 @@ const TeacherCard = ({ image, name, overall, slogan_Title, slogan_Content, secon
                         />
                     </div>
 
-                    <div className="hidden lg:block absolute top-0 right-0 w-[120px] h-[200px] bg-[#d9dcf6] rounded-bl-3xl z-0"></div>
+                    <div className="hidden lg:block absolute top-0 left-0 w-[120px] h-[200px] bg-[#d9dcf6] rounded-bl-3xl z-0"></div>
 
                     <div className="hidden lg:block absolute top-0 right-[40px] w-[80px] h-[30px] bg-[#d9dcf6] z-0"></div>
 

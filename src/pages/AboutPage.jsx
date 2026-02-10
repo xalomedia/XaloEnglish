@@ -7,10 +7,10 @@ import slider_khac from '../assets/slider/sliderKhac.png'
 const AboutPage = () => {
     const steps = [
         { number: 1, title: "LÀM BÀI TEST ĐẦU VÀO", desc: "Chuẩn format IELTS cùng các giáo viên chuyên môn" },
-        { number: 2, title: "\"CHẤN BỆNH\"", desc: "Trực tiếp sau khi test và nhận \"BẢNG CHẤN BỆNH\" chi tiết" },
-        { number: 3, title: "XÂY DỰNG LỘ TRÌNH", desc: "\"CHỮA\" (PLP) dựa trên kết quả bảng chấn bệnh" },
-        { number: 4, title: "TIẾN HÀNH DẠY VÀ HỌC", desc: "Theo lộ trình PLP đã được đề ra trước đó" },
-        { number: 5, title: "TIẾP TỤC \"CHẤN BỆNH\"", desc: "Xuyên suốt khóa học theo từng chặng và mục tiêu được đặt ra" },
+        { number: 2, title: "\"CHẨN BỆNH\"", desc: "Trực tiếp sau khi test và nhận \"BẢNG CHẨN BỆNH\" chi tiết" },
+        { number: 3, title: "XÂY DỰNG LỘ TRÌNH", desc: "\"CHỮA\" (RLP) dựa trên kết quả bảng chẩn bệnh" },
+        { number: 4, title: "TIẾN HÀNH DẠY VÀ HỌC", desc: "Theo lộ trình RLP đã được đề ra trước đó" },
+        { number: 5, title: "TIẾP TỤC \"CHẨN BỆNH\"", desc: "Xuyên suốt khóa học theo từng chặng và mục tiêu được đặt ra" },
         { number: 6, title: "BỔ SUNG THÊM TÀI LIỆU", desc: "Để chữa những vấn đề cần cải thiện trong quá trình học" }
     ];
 
@@ -44,11 +44,11 @@ const AboutPage = () => {
                         Sau nhiều năm đào tạo và giúp học viên chinh phục ngoại ngữ và IELTS, <span className="font-bold text-primary">Xa Lộ English</span> nhận thấy được rằng mỗi cá nhân sẽ có những vấn đề khác nhau trong quá trình học tập. Ở cùng một trình độ 6.0, nhưng có bạn sẽ yếu Reading và yếu những kỹ năng khác, hay bạn khác sẽ giỏi hơn ở Listening nhưng khó luyện tập những kỹ năng còn lại. Chính vì thế, <span className="font-bold text-primary">Xa Lộ English</span> nhận thấy được tính cấp thiết của việc nên tập trung vào từng học viên để giúp họ tháo gỡ từng vấn đề của mình trong quá trình tiến bộ từng bước, thay vì áp dụng một giáo án cố định cho cùng một mô hình lớp học.
                     </p>
                     <p>
-                        Vì vậy, mô hình <span className="font-bold text-accent">"CHẤN - CHỮA"</span> ra đời nhằm mục đích đưa ra giải pháp tối ưu nhất cho toàn bộ học viên. Đây là một chuỗi các hoạt động đánh giá, xem xét, và đưa ra kết luận dành cho học viên về sự tiến bộ, khả năng sử dụng ngôn ngữ và những điểm cần cải thiện và từ đó đưa ra các phương pháp học tập và bài tập cải thiện dành riêng cho học viên đó. Mô hình cũng được lấy ý tưởng từ quy trình chẩn - trị bệnh của bác sĩ, bởi vì giống như khi gặp bác sĩ, người học sẽ được đánh giá kỹ lưỡng về khả năng và "triệu chứng" của việc học tiếng Anh, sau đó sẽ nhận được lộ trình học tập phù hợp để "chữa" các vấn đề của mình bạn.
+                        Vì vậy, mô hình <span className="font-bold text-accent">"CHẨN - CHỮA"</span> ra đời nhằm mục đích đưa ra giải pháp tối ưu nhất cho toàn bộ học viên. Đây là một chuỗi các hoạt động đánh giá, xem xét, và đưa ra kết luận dành cho học viên về sự tiến bộ, khả năng sử dụng ngôn ngữ và những điểm cần cải thiện và từ đó đưa ra các phương pháp học tập và bài tập cải thiện dành riêng cho học viên đó. Mô hình cũng được lấy ý tưởng từ quy trình chẩn - trị bệnh của bác sĩ, bởi vì giống như khi gặp bác sĩ, người học sẽ được đánh giá kỹ lưỡng về khả năng và "triệu chứng" của việc học tiếng Anh, sau đó sẽ nhận được lộ trình học tập phù hợp để "chữa" các vấn đề của mình bạn.
                     </p>
                     <p className="font-bold mt-4 text-text-primary text-lg">Đến với <span className='font-bold text-primary'>Xa Lộ English</span>, để được:</p>
                     <ul className="space-y-3">
-                        <li className="flex items-start gap-3"><Check className="text-green-500 flex-shrink-0 mt-1" size={20} /> <span><span className="font-semibold text-primary">Chấn bệnh:</span> xác định đúng các điểm yếu cần cải thiện của các bạn trong quá trình học tiếng anh</span></li>
+                        <li className="flex items-start gap-3"><Check className="text-green-500 flex-shrink-0 mt-1" size={20} /> <span><span className="font-semibold text-primary">Chẩn bệnh:</span> xác định đúng các điểm yếu cần cải thiện của các bạn trong quá trình học tiếng anh</span></li>
                         <li className="flex items-start gap-3"><Check className="text-green-500 flex-shrink-0 mt-1" size={20} /> <span><span className="font-semibold text-primary">Chữa triệt để</span> các vấn đề nhờ vào việc chẩn đoán điểm yếu, giúp bạn đạt được mục tiêu đề ra ban đầu</span></li>
                         <li className="flex items-start gap-3"><Check className="text-green-500 flex-shrink-0 mt-1" size={20} /> <span>Hướng đến mục tiêu dài hạn <span className="font-semibold text-primary">"học để dùng"</span>, ứng dụng hiệu quả tiếng Anh vào học tập và đời sống, trên cả mục tiêu điểm số</span></li>
                     </ul>
@@ -58,10 +58,10 @@ const AboutPage = () => {
             {/* Steps Section */}
             <Section className="bg-gray-50 mt-12 mb-12">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="mb-6 text-3xl font-bold text-primary-dark uppercase tracking-wide">CÁC BƯỚC THỰC HIỆN CHẤN - CHỮA TẠI XA LỘ ENGLISH</h2>
+                    <h2 className="mb-6 text-3xl font-bold text-primary-dark uppercase tracking-wide">CÁC BƯỚC THỰC HIỆN CHẨN - CHỮA TẠI XA LỘ ENGLISH</h2>
 
                     <p className="text-text-secondary mb-4 mx-auto leading-relaxed">
-                        Hiểu được rằng hành trình chinh phục ngoại ngữ của mỗi người sẽ tồn tại những khó khăn riêng, ví dụ có bạn sẽ gặp khó khăn trong việc ghi nhớ từ vựng, hoặc bạn khác sẽ thiếu tự tin trong kỹ năng nói dẫn đến việc chậm đạt. Thiếu logic, hay việc ôm đồm và sắp xếp ý là điểm yếu chung của nhiều bạn trong kỹ năng viết. Đi từ việc suy nghĩ rằng, mỗi cá nhân sẽ có những điểm mạnh và điểm yếu riêng trong khi chinh phục một ngoại ngữ và do đó để đạt được mục tiêu sao cho hiệu quả nhất, mỗi bạn cũng sẽ cần một phương thức tiếp cận ngoại ngữ khác nhau thay vì áp dụng một "lộ trình chung" cho tất cả mọi người.
+                        Hiểu được rằng hành trình chinh phục ngoại ngữ của mỗi người sẽ tồn tại những khó khăn riêng. Ví dụ có bạn sẽ gặp khó khăn trong việc ghi nhớ từ vựng, hoặc bạn khác sẽ thiếu tự tin trong kỹ năng nói dẫn đến việc chậm đạt, thiếu logic, hay việc ôm đồm và sắp xếp ý là điểm yếu chung của nhiều bạn trong kỹ năng viết. Đi từ việc suy nghĩ rằng, mỗi cá nhân sẽ có những điểm mạnh và điểm yếu riêng trong khi chinh phục một ngoại ngữ và do đó để đạt được mục tiêu sao cho hiệu quả nhất, mỗi bạn cũng sẽ cần một phương thức tiếp cận ngoại ngữ khác nhau thay vì áp dụng một "lộ trình chung" cho tất cả mọi người.
                     </p>
                     <p className="text-text-secondary mb-4 mx-auto leading-relaxed">
                         Không áp dụng quy trình dạy và học theo phương pháp truyền thống, Xa Lộ English sẽ luôn chú trọng việc dựa trên vấn đề của từng học viên để đưa ra lộ trình cũng như phương pháp dạy phù hợp và hiệu quả dành cho từng bạn.
@@ -73,7 +73,7 @@ const AboutPage = () => {
 
                     <div className='grid grid-cols-4'>
                         <div className='col-span-2'>
-                            <h2 className="mb-6 text-3xl font-bold text-primary-dark uppercase tracking-wide">CÁC BƯỚC THỰC HIỆN CHẤN - CHỮA TẠI XA LỘ ENGLISH</h2>
+                            <h2 className="mb-6 text-3xl font-bold text-primary-dark uppercase tracking-wide">CÁC BƯỚC THỰC HIỆN CHẨN - CHỮA TẠI XA LỘ ENGLISH</h2>
                         </div>
                         <div className='col-span-2'>
                             <p className="text-text-secondary mb-4 mx-auto leading-relaxed">

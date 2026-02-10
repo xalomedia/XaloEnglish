@@ -20,7 +20,7 @@ const Header = () => {
 
     const navLinks = [
         { name: 'Về Chúng Tôi', path: '/about' },
-        { name: 'Phương Pháp Chấn - Chữa', path: '/method' },
+        { name: 'Phương Pháp Chẩn - Chữa', path: '/method' },
         { name: 'Khóa Học', path: '/courses' },
         { name: 'Lịch Khai Giảng', path: '/schedule' },
         { name: 'Thành Tích', path: '/achievements' },
@@ -35,7 +35,7 @@ const Header = () => {
 
                 <Link to="/" className="flex items-center gap-2 font-bold text-2xl text-primary-dark">
                     <div className="h-12 w-12">
-                        <img src="logo1.png" alt="" className='w-full' />
+                        <img src="LOGO_MAU.png" alt="" className='w-full' />
                     </div>
                     <span>xalo.english</span>
                 </Link>

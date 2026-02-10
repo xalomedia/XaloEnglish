@@ -74,15 +74,14 @@ const HomePage = () => {
       {/* <HomePopup /> */}
       {/* Hero Section */}
       <section className="relative min-h-[600px] h-auto flex items-center text-white overflow-hidden py-12">
-        <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[120%] bg-gradient-to-br from-primary-light to-primary-dark rounded-l-full opacity-10 z-0"></div>
+        <div className="opacity-0 md:opacity-10 lg:opacity-10 absolute  -top-[20%] -right-[10%] w-[60%] h-[120%] bg-gradient-to-br from-primary-light to-primary-dark rounded-l-full z-0  "></div>
         <div className="container mx-auto px-4 md:px-8 xl:px-24 2xl:px-32 relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-text-primary leading-tight">
-              Chinh Phục Tiếng Anh <br />
-              <span className="text-primary">Mất Gốc</span> Cùng Xalo
+              HỌC ĐỂ DÙNG
             </h1>
             <p className="text-lg text-text-secondary mb-8 max-w-xl">
-              Phương pháp <strong>Chấn - Chữa</strong> độc quyền. Giúp bạn lấy lại căn bản,
+              Phương pháp <strong>Chẩn - Chữa</strong> độc quyền. Giúp bạn lấy lại căn bản,
               tự tin giao tiếp và đạt điểm cao IELTS chỉ sau một lộ trình.
             </p>
             <div className="flex flex-wrap gap-4 mb-12">
@@ -136,14 +135,14 @@ const HomePage = () => {
                 <div className="flex items-center mb-6">
                   <div className="bg-[#e9d5ff] text-[#7e22ce] font-bold text-xl w-12 h-12 flex items-center justify-center rounded-lg mr-4 shadow-sm">1</div>
                   <h3 className="bg-[#312e81] text-white font-bold text-lg py-3 px-6 rounded-r-full -ml-4 pr-8 shadow-md flex-1">
-                    Quy trình "Chấn - Chữa" giúp học viên định vị bản thân rõ ràng
+                    Quy trình "Chẩn - Chữa" giúp học viên định vị bản thân rõ ràng
                   </h3>
                 </div>
                 <p className="text-text-secondary leading-relaxed text-justify">
-                  Xa Lộ English tin rằng muốn học đúng cách thì trước hết phải hiểu đúng mình. Bằng quy trình "Chấn - Chữa", học viên sẽ được "chấn" để nhìn ra điểm mạnh, điểm yếu, cũng như những rào cản trên hành trình IELTS. Từ đó, giáo viên sẽ "chữa" bằng việc xây dựng lộ trình học tập phù hợp với trình độ và mục tiêu cá nhân. Cách tiếp cận này giống như đi khám bệnh: chỉ khi chẩn đúng, thì chữa mới trúng. Nhờ vậy, học viên có định hướng rõ ràng, tránh học sai cách và nhanh chóng đạt được kết quả mong muốn.
+                  Xa Lộ English tin rằng muốn học đúng cách thì trước hết phải hiểu đúng mình. Bằng quy trình "Chẩn - Chữa", học viên sẽ được "chẩn" để nhìn ra điểm mạnh, điểm yếu, cũng như những rào cản trên hành trình IELTS. Từ đó, giáo viên sẽ "chữa" bằng việc xây dựng lộ trình học tập phù hợp với trình độ và mục tiêu cá nhân. Cách tiếp cận này giống như đi khám bệnh: chỉ khi chẩn đúng, thì chữa mới trúng. Nhờ vậy, học viên có định hướng rõ ràng, tránh học sai cách và nhanh chóng đạt được kết quả mong muốn.
                 </p>
               </div>
-              <div className="md:w-1/2 relative min-h-[300px] rounded-lg overflow-hidden">
+              <div className="md:w-1/2 relative aspect-video rounded-lg overflow-hidden">
                 <img 
                   src="https://img.youtube.com/vi/ZsJGAdcC-5U/maxresdefault.jpg" 
                   alt="Xa Lộ English Method" 
@@ -210,7 +209,7 @@ const HomePage = () => {
                 </h3>
               </div>
               <p className="text-text-secondary leading-relaxed text-justify">
-                Để đảm bảo mỗi học viên đều được "chấn" và hỗ trợ kịp thời, Xa Lộ English giữ quy mô lớp học nhỏ: tối đa 8 học viên với lớp offline và 10 học viên với lớp online. Quy mô này giúp giáo viên dễ dàng quan sát tiến độ của từng bạn, can thiệp khi cần thiết và tạo ra môi trường học tập gần gũi, nhiều tương tác.
+                Để đảm bảo mỗi học viên đều được "chẩn" và hỗ trợ kịp thời, Xa Lộ English giữ quy mô lớp học nhỏ: tối đa 8 học viên với lớp offline và 10 học viên với lớp online. Quy mô này giúp giáo viên dễ dàng quan sát tiến độ của từng bạn, can thiệp khi cần thiết và tạo ra môi trường học tập gần gũi, nhiều tương tác.
               </p>
             </div>
           </div>

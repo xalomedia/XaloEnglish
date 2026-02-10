@@ -2,8 +2,32 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import connectDB from './src/config/db.js';
+import cron from 'node-cron';
+import { sendLeadSummaryReport } from './src/utils/leadReportService.js';
 
 connectDB();
+
+// Scheduled Reports (Vietnam Time: Asia/Ho_Chi_Minh)
+// 9h00 sáng - Lấy lead từ 20h tối hôm trước (13 tiếng)
+cron.schedule('0 9 * * *', () => {
+    sendLeadSummaryReport('9h sáng', 13);
+}, {
+    timezone: "Asia/Ho_Chi_Minh"
+});
+
+// 15h00 chiều - Lấy lead từ 9h sáng (6 tiếng)
+cron.schedule('0 15 * * *', () => {
+    sendLeadSummaryReport('15h chiều', 6);
+}, {
+    timezone: "Asia/Ho_Chi_Minh"
+});
+
+// 20h00 tối - Lấy lead từ 15h chiều (5 tiếng)
+cron.schedule('0 20 * * *', () => {
+    sendLeadSummaryReport('20h tối', 5);
+}, {
+    timezone: "Asia/Ho_Chi_Minh"
+});
 
 const app = express();
 

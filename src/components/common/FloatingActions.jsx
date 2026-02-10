@@ -25,7 +25,7 @@ const FloatingActions = () => {
                 <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white shadow-sm group-hover:scale-110 transition-transform">
                     <Stethoscope size={20} />
                 </div>
-                <span className="font-bold text-sm hidden md:inline">Chuẩn bệnh miễn phí</span>
+                <span className="font-bold text-sm hidden md:inline">Chẩn bệnh miễn phí</span>
             </a>
 
         </div>

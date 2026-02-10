@@ -42,7 +42,7 @@ const NewsPage = () => {
                 <div className="container mx-auto px-4 relative z-10">
                     <h1 className="text-5xl font-extrabold tracking-widest text-white text-center mb-4">TIN TỨC</h1>
                     <p className="text-center text-white text-lg max-w-2xl mx-auto opacity-90">
-                        Cập nhật những kiến thức, kinh nghiệm và tài liệu học tiếng Anh mới nhất từ đội ngũ Xalo English.
+                        Cập nhật những kiến thức, kinh nghiệm và tài liệu học tiếng Anh mới nhất từ đội ngũ Xa Lộ English.
                     </p>
                 </div>
                 <div className="absolute -top-[50%] -left-[20%] w-[80%] h-[200%] bg-[radial-gradient(circle,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_70%)] rotate-30 pointer-events-none"></div>

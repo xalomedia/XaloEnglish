@@ -50,7 +50,7 @@ const TeachersPage = () => {
             <Section className="bg-white mt-12 mb-32">
                 <div className='relative mb-6'>
                     <p className="text-center text-lg max-w-2xl mx-auto opacity-90">
-                        Để giúp khách hàng và học viên yên tâm về chất lượng tại Xalo English.
+                        Để giúp khách hàng và học viên yên tâm về chất lượng tại Xa Lộ English.
                         Chúng mình luôn công khai minh bạch mọi thông tin về các giảng viên.
                     </p>
                     <div className="w-72 lg:w-150 rounded-full h-1 bg-primary mx-auto mt-4"></div>
